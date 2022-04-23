@@ -58,11 +58,10 @@ void Window::run()
     program.add(std::move(test_f));
     program.link();
 
-    auto vertices = Buffer<Vertex, GL_ARRAY_BUFFER>();
-
     auto vao = Vao();
     vao.bind();
 
+    auto vertices = Buffer<Vertex, GL_ARRAY_BUFFER>();
     vertices.bind();
     vertices.data({ 
         {{ -0.5f, -0.5f, 0.0f }, { 0.0f, 0.0f }},
