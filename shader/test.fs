@@ -5,5 +5,5 @@ in vec2 fs_UV;
 
 void main()
 {
-    gl_FragColor = vec4(fs_UV.r, 0.f, fs_UV.g, 1.f);
+    gl_FragColor = vec4(fs_UV.r, fs_UV.g, 0.f, 1.f);
 }
