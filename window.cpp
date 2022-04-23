@@ -37,7 +37,7 @@ Window::Window(int w, int h, std::string title)
 
     if (glewInit() != GLEW_OK)
     {
-        other::die("Fuck (OpenGL failed)");
+        other::die("Fuck (OpenGL failed (wow he just like me fr))");
     }
 }
 
