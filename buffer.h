@@ -32,12 +32,18 @@ class Buffer
             glGetIntegerv(what, &t);
             assertm((uint)t == this->m_handle, "You forgot to bind a buffer, idiot");
 #endif
-            glNamedBufferData(this->m_handle, d.size() * sizeof(T), data, GL_STATIC_DRAW);
+            this->m_elements = d.size();
+            glNamedBufferData(this->m_handle, this->m_elements * sizeof(T), data, GL_STATIC_DRAW);
         };
 
         void bind()
         {
             glBindBuffer(T2, this->m_handle);
+        };
+
+        unsigned int elements()
+        {
+            return this->m_elements;
         };
 
         ~Buffer()
@@ -47,4 +53,5 @@ class Buffer
 
     private:
         GLuint m_handle;
+        unsigned int m_elements;
 };

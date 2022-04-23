@@ -74,11 +74,11 @@ void Window::run()
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
 
-    //auto indices = Buffer<uint, GL_ELEMENT_ARRAY_BUFFER>();
-    //indices.data({
-    //    0, 1, 2,
-    //});
-    //indices.bind();
+    auto indices = Buffer<uint, GL_ELEMENT_ARRAY_BUFFER>();
+    indices.bind();
+    indices.data({
+        0, 1, 2,
+    });
 
     SDL_Event evt;
     for(;;)
@@ -106,7 +106,7 @@ void Window::run()
 
         program.use();
         vao.bind();
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glDrawElements(GL_TRIANGLES, indices.elements(), GL_UNSIGNED_INT, (void*)0);
 
         SDL_GL_SwapWindow(this->m_window);
     }
