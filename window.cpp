@@ -109,5 +109,5 @@ void Window::run()
 
         SDL_GL_SwapWindow(this->m_window);
     }
-    exit_loop: ;
+    exit_loop:;
 }

@@ -16,5 +16,4 @@ class Shader
 
     private:
         unsigned int m_handle;
-
 };
