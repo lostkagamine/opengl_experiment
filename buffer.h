@@ -18,7 +18,7 @@ class Buffer
         {
             auto data = d.data(); // T*
 #ifndef NDEBUG
-            GLenum what;
+            /*GLenum what;
             switch (T2)
             {
                 case GL_ARRAY_BUFFER:
@@ -30,7 +30,7 @@ class Buffer
             };
             GLint t;
             glGetIntegerv(what, &t);
-            assertm((uint)t == this->m_handle, "You forgot to bind a buffer, idiot");
+            assertm((uint)t == this->m_handle, "You forgot to bind a buffer, idiot");*/
 #endif
             this->m_elements = d.size();
             glNamedBufferData(this->m_handle, this->m_elements * sizeof(T), data, GL_STATIC_DRAW);

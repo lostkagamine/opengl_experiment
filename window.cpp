@@ -73,7 +73,7 @@ void Window::run()
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
 
-    auto indices = Buffer<uint, GL_ELEMENT_ARRAY_BUFFER>();
+    auto indices = Buffer<unsigned, GL_ELEMENT_ARRAY_BUFFER>();
     indices.bind();
     indices.data({
         0, 1, 2,

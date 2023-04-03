@@ -1,10 +1,10 @@
 #include <other.h>
 #include <cstdio>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "window.h"
 #include <memory>
 
-int main()
+int main(int argc, char* argv[])
 {
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
     {
